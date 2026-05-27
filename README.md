@@ -18,36 +18,7 @@ Buffett Investor 是一个基于四大投资大师方法论融合的智能股票
 - **用户画像**: 理解用户风格，提供个性化建议
 - **经验迭代**: 每次分析后自动复盘，持续进化
 
----
 
-## 文件结构
-
-```
-buffet/
-├── .trae/
-│   └── skills/
-│       └── buffett-investor/          # 技能核心目录
-│           ├── SKILL.md                # 主技能文件(入口)
-│           ├── master-methods.md       # 四大宗师方法论
-│           ├── deep-analysis.md         # 深度分析模块
-│           ├── hot-topic-mining.md      # 热点挖掘与选股漏斗
-│           ├── sector-rotation.md       # 板块轮动与市场洞察
-│           ├── review-loop.md           # 复盘迭代策略
-│           ├── report-templates.md      # 报告模板
-│           ├── workflow-checklists.md    # 工作流检查清单
-│           └── a-stock-specifics.md      # A股特有知识
-├── docs/                               # 复盘文档目录(不提交git)
-├── user-data/                          # 用户数据目录(不提交git)
-│   ├── user-profile.md                 # 用户画像
-│   ├── user-portfolio.md               # 持仓记录
-│   └── trade-history.md                # 操作历史
-├── .gitignore                          # Git忽略配置
-└── README.md                           # 本文档
-```
-
-**注意**: `docs/` 和 `user-data/` 目录包含敏感用户信息，已配置 `.gitignore` 排除，不会上传到Git。
-
----
 
 ## 核心方法论
 
