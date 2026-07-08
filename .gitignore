@@ -19,4 +19,4 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.bak
-./investment-experience/
+./investment-experience/*
