@@ -1,12 +1,12 @@
 # User Context Protocol - 用户上下文加载与更新协议
 
-**⚠️ 路径规则**: 用户数据文件绝对路径为 `/Users/intoblack/workspace/buffet/user-data/`。必须使用 LS 工具检查目录是否存在，再用 Read 工具读取文件。严禁使用 Glob 工具检查此目录。
+**路径规则**: 所有路径均相对于项目根目录（即`.trae/`所在目录的上一级）。用户数据位于 `user-data/` 子目录下。必须使用 LS 工具检查目录是否存在，再用 Read 工具读取文件。严禁使用 Glob 工具检查此目录。禁止使用绝对路径，确保跨机器/跨平台兼容。
 
 ## 加载协议 (Step -1)
 
 ### Step -1.1: 检查并读取用户持仓
 
-使用 LS 工具检查 `/Users/intoblack/workspace/buffet/user-data/` 目录是否存在。若存在，使用 Read 工具读取 `/Users/intoblack/workspace/buffet/user-data/user-portfolio.md`:
+使用 LS 工具检查项目根目录下 `user-data/` 目录是否存在。若存在，使用 Read 工具读取 `user-data/user-portfolio.md`:
 - 获取当前持仓列表(股票/代码/持股数/成本价/止损位/目标价)
 - 获取持仓统计(总市值/总盈亏/仓位分布/行业集中度)
 - 获取未卖出股票监控列表
@@ -15,7 +15,7 @@
 
 ### Step -1.2: 读取用户画像
 
-使用 Read 工具读取 `/Users/intoblack/workspace/buffet/user-data/user-profile.md`:
+使用 Read 工具读取 `user-data/user-profile.md`:
 - 获取投资风格(价值/成长/集中/分散/左侧/右侧)
 - 获取能力圈评估(各行业熟悉度)
 - 获取行为特征和个性化建议
@@ -25,7 +25,7 @@
 
 ### Step -1.3: 读取操作历史
 
-使用 Read 工具读取 `/Users/intoblack/workspace/buffet/user-data/trade-history.md`:
+使用 Read 工具读取 `user-data/trade-history.md`:
 - 获取完整操作日志(所有买入/卖出记录)
 - 获取操作统计(买入/卖出次数/金额/胜率)
 - 获取操作行为分析(止损执行率/操作频率)
@@ -50,13 +50,13 @@
 
 ### Step 8.1: 检查是否有买卖操作
 
-- 用户明确说"已买入"/"已建仓"/"已加仓"/"买了" → 更新 `/Users/intoblack/workspace/buffet/user-data/user-portfolio.md` 当前持仓:
+- 用户明确说"已买入"/"已建仓"/"已加仓"/"买了" → 更新 `user-data/user-portfolio.md` 当前持仓:
   - 在当前持仓表添加新行(含止损位/目标价)
   - 更新持仓统计(总市值/总盈亏/仓位分布)
   - 更新持仓行业分布
   - 更新未卖出股票监控
   - 清除待补充信息中已补充的项
-- 用户明确说"已卖出"/"已减仓"/"已清仓"/"卖了" → 更新 `/Users/intoblack/workspace/buffet/user-data/user-portfolio.md`:
+- 用户明确说"已卖出"/"已减仓"/"已清仓"/"卖了" → 更新 `user-data/user-portfolio.md`:
   - 从当前持仓移除或减少持股数
   - 添加到已清仓记录(含盈亏率/卖出日期)
   - 更新持仓统计
@@ -66,7 +66,7 @@
 
 ### Step 8.2: 更新操作历史
 
-使用 Edit 工具更新 `/Users/intoblack/workspace/buffet/user-data/trade-history.md`:
+使用 Edit 工具更新 `user-data/trade-history.md`:
 - 若用户确认买卖操作 → 添加操作日志(含序号/日期/操作/标的/数量/价格/金额/逻辑)
 - 更新操作统计(买入/卖出次数/金额/胜率)
 - 更新操作行为分析(止损执行率/操作频率等)
@@ -76,7 +76,7 @@
 
 ### Step 8.3: 更新用户画像
 
-使用 Edit 工具更新 `/Users/intoblack/workspace/buffet/user-data/user-profile.md`:
+使用 Edit 工具更新 `user-data/user-profile.md`:
 - 更新"最近活跃"为当天日期
 - 更新"累计分析次数"+1
 - 更新"历史分析偏好"(使用次数+1，更新最近使用日期和常涉及板块)
@@ -90,7 +90,7 @@
 
 ### Step 8.4: 更新持仓统计
 
-使用 Edit 工具更新 `/Users/intoblack/workspace/buffet/user-data/user-portfolio.md`:
+使用 Edit 工具更新 `user-data/user-portfolio.md`:
 - 重新计算总市值、总盈亏、现金比例
 - 重新计算最大单股仓位、单板块集中度
 - 更新持仓股票数、行业分散度
