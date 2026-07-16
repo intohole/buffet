@@ -14,7 +14,7 @@
 
 每次分析后，自动检查并更新用户持仓、画像和操作历史文件。
 
-**用户数据文件位于项目根目录 `user-data/`，不在技能目录内。**
+**用户数据文件位于技能目录下 `data/` 子目录。**
 
 ### 持仓更新规则
 
@@ -25,7 +25,7 @@
 卖出确认关键词: "已卖出"/"已减仓"/"已清仓"/"卖了"
 
 更新动作:
-1. 买入: 在 user-data/user-portfolio.md 当前持仓表添加新行(含止损位/目标价)
+1. 买入: 在 data/user-portfolio.md 当前持仓表添加新行(含止损位/目标价)
 2. 卖出: 
    - 减少持股数(部分卖出)
    - 或移除持仓(全部清仓)
@@ -33,7 +33,7 @@
    - 更新未卖出股票监控
 3. 未确认: 不更新持仓，在分析末尾提醒用户确认操作
 
-同步更新 user-data/trade-history.md:
+同步更新 data/trade-history.md:
 - 添加操作日志(含序号/日期/操作/标的/数量/价格/金额/逻辑)
 - 更新操作统计
 - 更新操作行为分析
@@ -50,7 +50,7 @@
 ### 画像更新规则
 
 ```
-每次分析后检查以下项目，有变化则更新 user-data/user-profile.md:
+每次分析后检查以下项目，有变化则更新 data/user-profile.md:
 
 1. 最近活跃: 更新为当天日期
 2. 累计分析次数: +1
@@ -67,7 +67,7 @@
 ### 操作历史更新规则
 
 ```
-每次分析后检查以下项目，更新 user-data/trade-history.md:
+每次分析后检查以下项目，更新 data/trade-history.md:
 
 1. 若用户确认买卖操作 → 添加操作日志
 2. 更新操作统计(买入/卖出次数/金额/胜率)
@@ -92,22 +92,22 @@ Step 0.1: 提取当前分析的关键词
   - 分析模式: "热点选股"/"买卖时机"/"持仓诊断"等
 
 Step 0.2: 执行Grep检索
-  使用 Grep 工具在 docs/ 目录搜索相关复盘:
+  使用 Grep 工具在 reviews/ 目录搜索相关复盘:
 
   示例1: 用户问"帮我选银行股"
-  → Grep pattern: "银行", path: "docs/"
-  → Grep pattern: "高股息", path: "docs/"
+  → Grep pattern: "银行", path: "reviews/"
+  → Grep pattern: "高股息", path: "reviews/"
   → 读取匹配的复盘文档
 
   示例2: 用户问"中际旭创什么时候买"
-  → Grep pattern: "中际旭创", path: "docs/"
-  → Grep pattern: "AI算力", path: "docs/"
-  → Grep pattern: "光模块", path: "docs/"
+  → Grep pattern: "中际旭创", path: "reviews/"
+  → Grep pattern: "AI算力", path: "reviews/"
+  → Grep pattern: "光模块", path: "reviews/"
   → 读取匹配的复盘文档
 
   示例3: 用户问"帮我从热点选股"
-  → Grep pattern: "热点", path: "docs/"
-  → Grep pattern: "选股", path: "docs/"
+  → Grep pattern: "热点", path: "reviews/"
+  → Grep pattern: "选股", path: "reviews/"
   → 读取匹配的复盘文档
 
 Step 0.3: 读取匹配的复盘文档
@@ -119,7 +119,7 @@ Step 0.3: 读取匹配的复盘文档
 
 Step 0.4: 兜底机制
   若关键词检索无结果，读取最近1篇复盘文档作为通用经验参考
-  使用 Glob "docs/review-*.md" 获取文件列表，读取最新的1篇
+  使用 Glob "reviews/review-*.md" 获取文件列表，读取最新的1篇
 ```
 
 ### 检索关键词映射表
@@ -140,9 +140,9 @@ Step 0.4: 兜底机制
 ### 文件命名
 
 ```
-docs/review-YYYYMMDD-HHmm.md
+reviews/review-YYYYMMDD-HHmm.md
 
-示例: docs/review-20260414-1530.md
+示例: reviews/review-20260414-1530.md
 ```
 
 ### 文档模板
@@ -274,13 +274,13 @@ docs/review-YYYYMMDD-HHmm.md
 
 | 类别 | 说明 | 存储位置 |
 |------|------|---------|
-| 选股技巧 | 新发现的筛选条件/指标 | investment-experience/对应分类文件 |
-| 避坑经验 | 新发现的风险/陷阱 | investment-experience/discipline-rules.md |
-| 策略优化 | 阈值/规则的调整建议 | investment-experience/对应分类文件 |
-| 市场规律 | 新发现的市场运行规律 | investment-experience/market-patterns.md |
-| 前瞻信号 | 前瞻性判断与验证 | investment-experience/forward-signals.md |
-| 行业认知 | 行业特有知识 | investment-experience/industry-insights.md |
-| 估值判断 | 估值方法与经验 | investment-experience/valuation-rules.md |
+| 选股技巧 | 新发现的筛选条件/指标 | experience/对应分类文件 |
+| 避坑经验 | 新发现的风险/陷阱 | experience/discipline-rules.md |
+| 策略优化 | 阈值/规则的调整建议 | experience/对应分类文件 |
+| 市场规律 | 新发现的市场运行规律 | experience/market-patterns.md |
+| 前瞻信号 | 前瞻性判断与验证 | experience/forward-signals.md |
+| 行业认知 | 行业特有知识 | experience/industry-insights.md |
+| 估值判断 | 估值方法与经验 | experience/valuation-rules.md |
 
 ## 策略优化协议
 
@@ -288,12 +288,12 @@ docs/review-YYYYMMDD-HHmm.md
 
 | 问题类型 | 优化动作 | 影响文件 |
 |---------|---------|---------|
-| 护城河评分偏差 | 调整评分标准或权重 | investment-experience/valuation-rules.md |
-| 财务门控过严/过松 | 调整阈值 | investment-experience/valuation-rules.md |
-| 热点评分不准 | 调整4维评分标准 | investment-experience/market-patterns.md |
-| 时机判断偏差 | 调整买入信号权重 | investment-experience/discipline-rules.md |
-| A股特有风险遗漏 | 新增红旗检查项 | investment-experience/discipline-rules.md |
-| 板块轮动不准 | 调整周期映射 | investment-experience/market-patterns.md |
-| 前瞻判断偏差 | 调整信号权重或阈值 | investment-experience/forward-signals.md |
+| 护城河评分偏差 | 调整评分标准或权重 | experience/valuation-rules.md |
+| 财务门控过严/过松 | 调整阈值 | experience/valuation-rules.md |
+| 热点评分不准 | 调整4维评分标准 | experience/market-patterns.md |
+| 时机判断偏差 | 调整买入信号权重 | experience/discipline-rules.md |
+| A股特有风险遗漏 | 新增红旗检查项 | experience/discipline-rules.md |
+| 板块轮动不准 | 调整周期映射 | experience/market-patterns.md |
+| 前瞻判断偏差 | 调整信号权重或阈值 | experience/forward-signals.md |
 
 
