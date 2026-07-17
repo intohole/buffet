@@ -93,7 +93,7 @@ Step 4: 生成时机报告
 
 ```
 Step 1: 收集持仓信息
-  ☐ 读取 data/ 下的持仓/风格/操作日志
+  ☐ 读取工作区 .investor-context/ 下的持仓/风格/操作日志（可选，优雅降级）
   ☐ 提醒用户补充待补充信息
 
 Step 2: 逐只5+1层分析
@@ -161,7 +161,7 @@ Step 4: 行动清单
 
 ## 复盘迭代 工作流
 
-详细步骤: [review-loop.md](review-loop.md)
+详细步骤: [review-methodology.md](review-methodology.md)
 
 ```
 Step 1: 执行复盘(每次分析后)
@@ -171,9 +171,9 @@ Step 1: 执行复盘(每次分析后)
   ☐ 检查输出规范性
 
 Step 2: 生成复盘文档
-  ☐ 文件名: reviews/review-YYYYMMDD-HHmm.md
+  ☐ 文件名: .investor-reviews/review-YYYYMMDD-HHmm.md（工作区，若存在）
   ☐ 分析概要+核心判断依据+前瞻性判断+风险预警+待验证假设
-  ☐ 经验沉淀引用(链接到 experience/ 中的具体条目)
+  ☐ 经验沉淀引用(链接到工作区 .investor-experience/ 中的具体条目，若存在)
 
 Step 3: 归因复盘(3-5个交易日后)
   ☐ 判断准确性: 评级与实际走势是否一致？
