@@ -190,8 +190,12 @@ WebSearch常混入往年同日数据，导致价格/指数失真。详细校验�
 - 事件窗口期（IPO抽血>200亿/解禁>50亿/中报截止前3天）
 - PEG>1.5且PE>100
 - 题材收入占比<1%=蹭热点
+- 深度破净标的价值陷阱三重验证2项恶化（业绩下滑+筹码分散+资金流出）
+- Piotroski F-Score<5分（基本面恶化）
+- 净现比<0.8（白条利润）
+- 应收账款占营收比连续2年上升（暴雷预警）
 
-**A股红旗检查**（14项必查）详见 [references/deep-analysis.md](references/deep-analysis.md) 的「A股红旗检查清单」。
+**A股红旗检查**（20项必查，含Piotroski F-Score+8层漏斗核心项）详见 [references/deep-analysis.md](references/deep-analysis.md) 的「A股红旗检查清单」。深度破净(PB<0.6)/高股息(>5%)标的必须额外执行第18-20项价值陷阱检查。
 
 **割裂度筛选**：
 1. 板块背离: 板块回调时个股不跌 → 强主力
