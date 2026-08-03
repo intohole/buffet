@@ -92,6 +92,29 @@ WebSearch常混入往年同日数据，导致价格/指数失真。详细校验�
 
 详细协议：[references/user-context-protocol.md](references/user-context-protocol.md)
 
+### Step 0.3: 政策上下文加载（必做，长期跟进）
+
+A股是政策驱动型市场，政策必须作为贯穿所有分析的长期上下文。读取 [references/policy-context.md](references/policy-context.md) 后执行：
+
+1. **政策周期定位**：基于最新搜索判定当前处于"政策底→资金底→市场底→业绩底"哪一阶段
+2. **政策层级识别**：区分长期战略(3-5年)/年度基调/短期货币政策的时效性
+3. **政策传导链分析**：验证"政策落地→订单增加→业绩兑现"完整链条
+4. **政策影响评估**：对持仓/候选标的执行政策方向+时效性+传导阶段+增持主体4维评估
+
+**执行3项并行WebSearch**：
+```
+1. "国务院 央行 证监会 政策 最新 {今日日期}" - 识别最新政策层级
+2. "国家队 增持 ETF 险资 {今日日期}" - 判断资金底信号
+3. "PMI 社融 CPI 中报业绩 {当前月份}" - 验证业绩底进程
+```
+
+**关键输出**：`当前政策周期=XXX阶段` + `策略适配=逆向布局/积极进攻/进攻警惕/防御减仓`，此结论贯穿后续所有分析。
+
+**硬约束**：
+- 禁止脱离政策周期做个股推荐（政策压制领域即使技术面再好也不推荐）
+- 政策底确认后，禁止恐慌卖出，应提示逆向布局机会
+- 市场底未确认时，禁止满仓，保持2-3成底仓试错
+
 ### Step 1: Layer 1 风险检查
 
 - 能力圈: 能否用3句话解释该业务？
@@ -121,11 +144,11 @@ WebSearch常混入往年同日数据，导致价格/指数失真。详细校验�
   "涨停数量 跌停数量 封板率 {今日日期}"
   "换手率排名 量比排名 {今日日期}"
 
-批次3-政策面+业绩面:
-  "政策利好 产业政策 最新 {今日日期}"
-  "业绩超预期 {当前季度}报 {当前年份}"
-  "行业景气度 景气上行 {当前年份}"
-  "净利润增长 业绩爆发 {当前年份}"
+批次3-政策传导链分析（基于Step 0.3，必须执行）:
+  "政策落地 行业受益 业绩兑现 {当前年份}" - 验证传导链条
+  "政策压制 调控 限制 行业 {当前年份}" - 识别避坑方向
+  "业绩超预期 {当前季度}报 {当前年份}" - 业绩底验证
+  "行业景气度 景气上行 政策扶持 {当前年份}" - 赛道定位
 
 批次4-事件面:
   "突发新闻 财经 今日 {今日日期}"
@@ -292,7 +315,8 @@ WebSearch常混入往年同日数据，导致价格/指数失真。详细校验�
 - [profit-protection.md](references/profit-protection.md) — 止盈策略与利润保护
 - [wealth-planning.md](references/wealth-planning.md) — 财富规划与资产配置
 - [report-templates.md](references/report-templates.md) — 报告模板
-- [hard-constraints.md](references/hard-constraints.md) — 通用高置信度硬约束（选股/仓位/周期/数据/前瞻）
+- [hard-constraints.md](references/hard-constraints.md) — 通用高置信度硬约束（选股/仓位/周期/数据/前瞻/政策传导）
+- [policy-context.md](references/policy-context.md) — 政策上下文长期跟踪（传导链/层级时效/政策日历/影响评估）
 - [review-methodology.md](references/review-methodology.md) — 通用复盘方法论（5步流程+模式提炼+双向记录）
 - [user-context-protocol.md](references/user-context-protocol.md) — 用户上下文加载协议（可选，优雅降级）
 - [workflow-checklists.md](references/workflow-checklists.md) — 工作流检查清单
