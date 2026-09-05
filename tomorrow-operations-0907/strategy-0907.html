@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日开盘操作策略 2026-09-07 | 持仓操作清单</title>
+<style>
+:root{--bg:#f6f1e8;--bg2:#ffffff;--ink:#243b44;--muted:#6b7d85;--rule:#d9cdbb;--accent:#0d7377;--accent2:#c0392b;--green:#1a8847;--red:#d9402e;--orange:#d68910;--yellow:#b8860b;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;font-size:15px;-webkit-font-smoothing:antialiased;}
+.container{max-width:920px;margin:0 auto;padding:2rem 1.5rem 4rem;}
+.header{text-align:center;padding:2.5rem 1rem 2rem;border-bottom:2px solid var(--accent);margin-bottom:2rem;}
+.header .date{font-size:.85rem;color:var(--muted);letter-spacing:.1em;}
+.header h1{font-size:1.7rem;font-weight:700;margin:.5rem 0;}
+.header .subtitle{font-size:.95rem;color:var(--accent);font-weight:600;}
+section{margin-bottom:2.4rem;}
+h2{font-size:1.15rem;font-weight:700;border-left:4px solid var(--accent);padding-left:.75rem;margin-bottom:1rem;}
+h3{font-size:.95rem;font-weight:600;color:var(--accent);margin:1.1rem 0 .5rem;}
+p{margin-bottom:.7rem;}
+.banner{background:var(--bg2);border:1px solid var(--rule);border-radius:8px;padding:1.2rem;margin-bottom:1.2rem;}
+.tag{display:inline-block;padding:3px 12px;border-radius:4px;font-size:.8rem;font-weight:600;color:#fff;}
+.tag.phase{background:var(--accent2);}
+.tag.strat{background:var(--orange);margin-left:.5rem;}
+.tag.strat.def{background:var(--accent2);}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin-top:.9rem;}
+.stat{text-align:center;padding:.5rem;background:var(--bg);border-radius:6px;}
+.stat .val{font-size:1.05rem;font-weight:700;}
+.stat .label{font-size:.7rem;color:var(--muted);margin-top:2px;}
+.table-wrap{overflow-x:auto;border-radius:8px;border:1px solid var(--rule);}
+table{width:100%;border-collapse:collapse;background:var(--bg2);font-size:.85rem;min-width:680px;}
+th{background:var(--accent);color:#fff;padding:.6rem .5rem;text-align:left;font-weight:600;font-size:.8rem;white-space:nowrap;}
+td{padding:.5rem;border-bottom:1px solid var(--rule);white-space:nowrap;vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+.p{color:var(--green);font-weight:600;}
+.l{color:var(--red);font-weight:600;}
+.w{color:var(--orange);font-weight:600;}
+.card{background:var(--bg2);border:1px solid var(--rule);border-left:5px solid var(--accent);border-radius:8px;padding:1rem 1.2rem;margin-bottom:.8rem;}
+.card.ok{border-left-color:var(--green);}
+.card.warn{border-left-color:var(--orange);}
+.card.bad{border-left-color:var(--red);}
+.card .tt{font-weight:700;margin-bottom:.35rem;}
+.card p{font-size:.85rem;margin:0;}
+.callout{background:#fff8e1;border:1px solid var(--yellow);border-radius:8px;padding:1rem 1.2rem;margin:1rem 0;}
+.callout .t{font-weight:700;color:var(--yellow);font-size:.9rem;margin-bottom:.3rem;}
+.callout p{font-size:.85rem;margin:0;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;}
+.risk{background:var(--bg2);border:1px solid var(--rule);border-radius:8px;padding:.7rem .9rem;}
+.risk .lv{font-size:.75rem;font-weight:600;margin-bottom:.2rem;}
+.risk.hi .lv{color:var(--red);}.risk.mid .lv{color:var(--orange);}.risk.lo .lv{color:var(--green);}
+.risk p{font-size:.8rem;margin:0;color:var(--muted);}
+.disclaimer{margin-top:2rem;padding:1rem;background:var(--bg2);border:1px solid var(--rule);border-radius:8px;font-size:.75rem;color:var(--muted);text-align:center;}
+@media(max-width:600px){.container{padding:1rem;}.stats{grid-template-columns:repeat(2,1fr);}.grid2{grid-template-columns:1fr;}h1{font-size:1.35rem;}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <div class="date">2026-09-05（周六）生成 | 下一交易日 9/7（周一）开盘操作策略</div>
+  <h1>今日开盘操作策略</h1>
+  <div class="subtitle">轻激进风格 | 3只持仓 + 现金约45% | 高位分化·防守基调</div>
+</div>
+
+<!-- 市场周期 -->
+<section>
+  <h2>一、市场周期与基调</h2>
+  <div class="banner">
+    <span class="tag phase">高位分化 · 放量假突破</span>
+    <span class="tag strat def">基调：防守 + 谨慎</span>
+    <p style="font-size:.85rem;color:var(--muted);margin-top:.6rem;">
+      上证收3930.12（<span class="l">-0.30%</span>，开3955/高3980.20/低3915.22），深成13516.97（<span class="l">-0.79%</span>），创业板3286.55（<span class="l">-0.78%</span>）。两市成交2.03万亿、放量2718亿，涨停39/跌停9、封板率59%，跌多涨少（2908跌/2106涨）。<strong>5/10/20/60日均线高度粘合、收盘跌破5/10/20日线、短期空头排列初现</strong>；放量冲高3980后收3930下方=关键位假突破。机构龙虎榜连续5日净卖出、两市主力净流出153.93亿。
+    </p>
+    <div class="stats">
+      <div class="stat"><div class="val l">-0.30%</div><div class="label">上证 3930(冲高回落)</div></div>
+      <div class="stat"><div class="val w">2.03万亿</div><div class="label">两市成交(放量2718亿)</div></div>
+      <div class="stat"><div class="val w">82.3%</div><div class="label">全A PE分位(高位)</div></div>
+      <div class="stat"><div class="val l">防守</div><div class="label">操作基调</div></div>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="t">政策周期：政策底→资金底（资金底形成中）</div>
+    <p>政策底已确认：国家队7月以来ETF净流入超3000亿 + 央行9/7开展5000亿买断式逆回购 + 十部门硬科技/中小企业政策 + 险资入市（国有险企30%新增保费投A股）；9/4 ETF净流入214.83亿。但8月PMI 49.8%仍低于荣枯线，<strong>业绩底未确认</strong>。策略适配：进攻警惕/防御减仓——政策托底但短期资金从高位主线撤退，不追高、不抄杀跌。</p>
+  </div>
+</section>
+
+<!-- 热点 -->
+<section>
+  <h2>二、全市场热点识别</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>热点</th><th>催化</th><th>龙头股</th><th>评分</th><th>评级</th></tr></thead>
+      <tbody>
+        <tr><td>农业养殖/种植</td><td>超强厄尔尼诺(持续至2027)+猪价11.06元/公斤(自6月低点+17%)+能繁母猪去化</td><td>亚盛集团6天3板、敦煌种业6天3板、新希望涨停、新五丰、天邦、罗牛山</td><td>8-9分</td><td class="w">⚠️次级偏主线</td></tr>
+        <tr><td>传媒/AI短剧</td><td>首部AIGC长剧《后西游记》上线芒果TV+湖南卫视黄金档</td><td>龙版传媒5连板、欢瑞世纪5天4板、芒果超媒2个20cm、博纳4天3板</td><td>8分</td><td class="w">⚠️次级(高位连板)</td></tr>
+        <tr><td>大消费</td><td>商务部等7部门《商品消费扩容升级实施意见》2030年社零60万亿</td><td>百大集团2连板、白酒/乳业/食品低位补涨</td><td>7-8分</td><td class="w">⚠️次级</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="grid2" style="margin-top:.8rem;">
+    <div class="risk hi"><div class="lv">农业养殖 · 追高风险</div><p>板块指数连续6周上涨创4个月新高，但游资已高位兑现（亚盛/敦煌/金健米业净卖出），猪企中报仍预亏（牧原-57亿）、业绩未兑现，首日爆发后接力风险高，不追首板。</p></div>
+    <div class="risk hi"><div class="lv">传媒AI短剧 · 纯概念</div><p>龙版传媒5连板但6月AI视频业务营收仅80元（题材收入占比&lt;1%=蹭热点），5板已触禁追红线，龙头见顶题材即退，不接最后一棒。</p></div>
+    <div class="risk mid"><div class="lv">大消费 · 低位补涨</div><p>政策国家级、方向正确，但消费复苏偏弱、持续性待验证，回调看、不追高。</p></div>
+    <div class="risk lo"><div class="lv">硬科技 · 当前杀跌</div><p>半导体资金净流出160亿、光模块/PCB为本周主力出逃板块，叠加美股科技大跌，不抄底，等企稳信号。</p></div>
+  </div>
+  <p style="font-size:.82rem;color:var(--muted);margin-top:.6rem;"><strong>市场情绪与方向</strong>：高位分化退潮期，涨停39/跌停9、封板率59%、跌多涨少，无清晰可持续主线，资金高低切换（高位AI硬科技→低位消费/农业）。方向短期向下承压，防守优先。</p>
+</section>
+
+<!-- 持仓诊断 -->
+<section>
+  <h2>三、自选股/持仓逐一诊断</h2>
+  <div class="card ok">
+    <div class="tt">招商银行 600036 · 持有 + 高位滞涨兑现200锁利</div>
+    <p>收41.69（+1.51%），成本36.07，浮盈<span class="p">+15.6%</span>。MA5/10/20多头（40.92/40.24/39.48），主力连续3日净流入（9/4 +6075万）。银行护盘活跃、42家银行破净、招行股息率5.32%、2026E股息率5.2%。但3连阳后高位，9/4高41.78已触41.4滞涨兑现区。明日冲高41.8-42滞涨须机械兑现200锁利，其余守40。</p>
+  </div>
+  <div class="card ok">
+    <div class="tt">格力电器 000651 · 持有，站稳38上方不回补</div>
+    <p>收38.98（+0.62%），成本39.89，浮亏<span class="l">-2.3%</span>。MA5/10/20粘合（38.74/39.06/38.81），站稳38上方。回购注销≥70%进行中（回购价上限54.55）+10派20元高分红托底；2025营收-10%/净利-9.9%但估值低。不向下摊平，破37.5评估降仓。</p>
+  </div>
+  <div class="card bad">
+    <div class="tt">沪电股份 002463 · 反抽减仓，破位坚定清仓</div>
+    <p>收111.50（<span class="l">-4.23%</span>），成本118.60，浮亏<span class="l">-6.0%</span>。已破MA5/10/20（118.39/118.47/119.55）、破116关键位，最低110.59。主力净流出8.14亿（9/4）、10日净流出1亿，光模块/PCB为本周主力出逃板块。叠加美股科技大跌（英伟达-4.57%、费半-3%）+美联储9月加息预期升温（57-65%）+半导体资金流出160亿，AI算力链承压。明日反抽115-117滞涨果断减100；破110坚决清仓剩余，机械纪律、不赌反弹。</p>
+  </div>
+  <h3>自选股池（观望为主，不追高）</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>股票</th><th>代码</th><th>9/4收盘</th><th>操作</th><th>关键价位</th></tr></thead>
+      <tbody>
+        <tr><td>中天科技</td><td>600522</td><td class="l">31.70(-3.68%)</td><td>观望</td><td>AI算力链资金流出，等企稳</td></tr>
+        <tr><td>亨通光电</td><td>600487</td><td class="l">62.22(-4.70%)</td><td>观望</td><td>同上，等企稳</td></tr>
+        <tr><td>工业富联</td><td>601138</td><td class="p">63.69(+0.78%)</td><td>观望</td><td>AI算力，等企稳</td></tr>
+        <tr><td>三一重工</td><td>600031</td><td class="p">20.00(+0.30%)</td><td>关注回调</td><td>近5日+4.71%多头，回调MA10可看</td></tr>
+        <tr><td>特变电工</td><td>600089</td><td class="p">18.88(+0.27%)</td><td>观望</td><td>已破MA20，等修复</td></tr>
+        <tr><td>中国卫星</td><td>600118</td><td class="l">57.62(-0.48%)</td><td>观望</td><td>商业航天，题材未兑现</td></tr>
+        <tr><td>济川药业</td><td>600566</td><td class="p">25.74(+0.82%)</td><td>观望</td><td>医药高股息，等回调</td></tr>
+        <tr><td>中国神华</td><td>601088</td><td class="l">47.61(-0.36%)</td><td>已清仓不追回</td><td>煤炭偏弱，不接回</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 操作清单 -->
+<section>
+  <h2>四、今日操作清单</h2>
+  <div class="callout">
+    <div class="t">大盘基调</div>
+    <p>放量假突破后方向向下承压。<strong>盯紧上证3915（9/4低）：低开破位→加速防守、坚决降仓；反抽3950-3960滞涨仍防守不加仓；放量收回3950上方才算短线企稳</strong>。政策托底犹在，但短期资金从高位主线撤退、高低切换，退潮期不追高位、不抄杀跌，现金留子弹。</p>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>股票代码</th><th>名称</th><th>操作建议</th><th>关键价位</th><th>理由</th></tr></thead>
+      <tbody>
+        <tr><td>600036</td><td>招商银行</td><td>持有；冲高41.8-42滞涨减200锁利</td><td>41.8-42滞涨减；回踩40守；止损35</td><td>浮盈+15.6%、主力连续3日净流入，银行护盘活跃但别贪，落袋部分防回吐</td></tr>
+        <tr><td>000651</td><td>格力电器</td><td>持有，站稳38上方不回补</td><td>守38；破37.5评估降仓；止损35</td><td>回购注销≥70%+高股息托底，业绩下滑但估值低，不向下摊平</td></tr>
+        <tr><td>002463</td><td>沪电股份</td><td>反抽减仓，破位坚定清仓</td><td>反抽115-117滞涨减100；破110坚决清仓；不再补</td><td>浮亏-6%、破MA20/116确认，主力净流出8.14亿+美股科技大跌压制，机械纪律优先、不赌反弹</td></tr>
+        <tr><td>—</td><td>现金(约45%)</td><td>不加仓，防守等企稳</td><td>放量收3950上方再谈；低开破3910加速防守</td><td>高位分化放量假突破，机构连续5日净卖出，留子弹防二次下探、不抢反弹</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>风险预警</h3>
+  <div class="grid2">
+    <div class="risk hi"><div class="lv">美联储加息预期</div><p>9月加息概率升至57-65%、美债收益率4.79%，美股科技大跌压制A股AI硬件，沪电等科技持仓承压。</p></div>
+    <div class="risk hi"><div class="lv">沪电止损执行</div><p>破110需果断清仓，防继续下杀吞噬整体浮盈；机械纪律不容犹豫（连续两日未落到位）。</p></div>
+    <div class="risk hi"><div class="lv">二次探底</div><p>假突破后低开破3915可能继续下探3900下方，持防守姿态。</p></div>
+    <div class="risk mid"><div class="lv">热点高位兑现</div><p>农业/传媒首日爆发后游资已兑现，次日易回落，不追涨；9月魔咒（美股9月平均回报全年最差）。</p></div>
+  </div>
+</section>
+
+<div class="disclaimer">
+  <p>免责声明：基于巴菲特/林奇/利弗莫尔/索罗斯等大师方法论+研究员7步闭环+A股战法，仅供参考，不构成投资建议。投资有风险，决策以实盘为准。</p>
+  <p>数据来源：指数/个股价格、涨跌幅、成交额、涨停跌停及板块涨幅经确定性行情接口校验（腾讯行情 &amp; 东方财富涨停池/资金流，2026-09-04收盘）；盘面叙事与政策来自公开财经资讯（凤凰/新浪/东方财富/财联社/证券时报等）。</p>
+</div>
+
+</div>
+</body>
+</html>
